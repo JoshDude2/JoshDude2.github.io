@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title</title>
+    <script>
+        // Function to detect if the user is on a mobile device
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        // Function to display the message
+        function displayMessage() {
+            if (isMobileDevice()) {
+                const message = document.createElement('div');
+                message.textContent = 'Get off your damn phone…. And go to your computer';
+                message.style.position = 'fixed';
+                message.style.top = '20px';
+                message.style.left = '50%';
+                message.style.transform = 'translateX(-50%)';
+                message.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+                message.style.color = '#ffffff';
+                message.style.padding = '10px';
+                message.style.borderRadius = '5px';
+                message.style.zIndex = '1000';
+                document.body.appendChild(message);
+            }
+        }
+
+        // Run the displayMessage function on page load
+        window.onload = displayMessage;
+    </script>
+</head>
+  <body>
+    <main>
+        <h1>YOU ARE ON A COMPUTER, GOOD JOB.</h1>  
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
