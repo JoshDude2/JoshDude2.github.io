@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title</title>
+    <title>detect mobile test</title>
     <style>
         #mobile-message {
             position: fixed;
@@ -18,16 +18,12 @@
         }
     </style>
     <script>
-        // Function to detect if the user is on a mobile device
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        // Function to handle mobile detection
+       // Function to handle mobile detection
         function handleMobileDetection() {
             if (isMobileDevice()) {
                 // Hide the main content
-                document.body.innerHTML = '';
+                const content = document.getElementById('main-content');
+                content.classList.add('hide-content');
 
                 // Create and display the message
                 const message = document.createElement('div');
@@ -36,7 +32,6 @@
                 document.body.appendChild(message);
             }
         }
-
         // Run the handleMobileDetection function on page load
         window.onload = handleMobileDetection;
     </script>
