@@ -4,32 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Title</title>
+    <style>
+        #mobile-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
     <script>
         // Function to detect if the user is on a mobile device
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
 
-        // Function to display the message
-        function displayMessage() {
+        // Function to handle mobile detection
+        function handleMobileDetection() {
             if (isMobileDevice()) {
+                // Hide the main content
+                document.body.innerHTML = '';
+
+                // Create and display the message
                 const message = document.createElement('div');
+                message.id = 'mobile-message';
                 message.textContent = 'Get off your damn phone…. And go to your computer';
-                message.style.position = 'fixed';
-                message.style.top = '20px';
-                message.style.left = '50%';
-                message.style.transform = 'translateX(-50%)';
-                message.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-                message.style.color = '#ffffff';
-                message.style.padding = '10px';
-                message.style.borderRadius = '5px';
-                message.style.zIndex = '1000';
                 document.body.appendChild(message);
             }
         }
 
-        // Run the displayMessage function on page load
-        window.onload = displayMessage;
+        // Run the handleMobileDetection function on page load
+        window.onload = handleMobileDetection;
     </script>
 </head>
   <body>
